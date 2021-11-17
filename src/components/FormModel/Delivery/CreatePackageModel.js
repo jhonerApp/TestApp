@@ -1,99 +1,105 @@
 
+
 const errMsg = 'This is required!';
 export default {
     formField: {
 
         //PICKUP
         pickCompanyName: {
-            name: 'pick_company_name',
+            name: 'pickCompanyName',
             label: 'Company name(optional)',
         },
         pickFName: {
-            name: 'pick_fname',
+            name: 'pickFName',
             label: 'Firstname',
             requiredMsg: errMsg
         },
         pickLName: {
-            name: 'pick_lname',
+            name: 'pickLName',
             label: 'Lastname',
             requiredMsg: errMsg
         },
         pickCPnumber: {
-            name: 'pick_cpnumber',
+            name: 'pickCPnumber',
             label: 'Cellphone#',
             requiredMsg: errMsg
         },
         pickAddress: {
-            name: 'pick_address',
+            name: 'pickAddress',
             label: 'Pickup Address',
             requiredMsg: errMsg
         },
 
         //DROPOFF
         dropCompanyName: {
-            name: 'drop_company_name',
+            name: 'dropCompanyName',
             label: 'Company name(optional)',
         },
         dropFName: {
-            name: 'drop_fname',
+            name: 'dropFName',
             label: 'Firstname',
             requiredMsg: errMsg
         },
         dropLName: {
-            name: 'drop_lname',
+            name: 'dropLName',
             label: 'Lastname',
             requiredMsg: errMsg
         },
         dropCPnumber: {
-            name: 'drop_cpnumber',
+            name: 'dropCPnumber',
             label: 'Cellphone#',
             requiredMsg: errMsg
         },
         dropAddress: {
-            name: 'drop_address',
+            name: 'dropAddress',
             label: 'Dropoff Address',
             requiredMsg: errMsg
         },
 
         //PARCEL DETAILS
         parcelDetails: {
-            name: 'parcel_details',
+            name: 'parcelDetails',
             label: 'Item details(optional)',
         },
         parcelHeight: {
-            name: 'parcel_height',
+            name: 'parcelHeight',
             label: 'Parcel Height(cm)',
             requiredMsg: errMsg
         },
         parcelWitdh: {
-            name: 'parcel_witdh',
+            name: 'parcelWitdh',
             label: 'Parcel Witdh(cm)',
             requiredMsg: errMsg
         },
         parcelLength: {
-            name: 'parcel_length',
+            name: 'parcelLength',
             label: 'Parcel Length(cm)',
             requiredMsg: errMsg
         },
         parcelWeigth: {
-            name: 'parcel_weight',
+            name: 'parcelWeigth',
             label: 'Parcel Weigth',
             requiredMsg: errMsg
         },
         deliveryDate: {
-            name: 'delivery_date',
+            name: 'deliveryDate',
             label: 'Delivery Date',
 
         },
         deliveryTime: {
-            name: 'delivery_time',
+            name: 'deliveryTime',
             label: 'Delivery Date',
 
         },
         parcelInstruction: {
-            name: 'parcel_instructions',
+            name: 'parcelInstruction',
             label: 'Instructions',
 
+        },
+        deliveryOption: {
+            name: 'parcelInstruction',
+            label: 'Instructions',
+            requiredMsg: 'Delivery Option Required!'
         }
     }
 }
