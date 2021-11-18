@@ -20,7 +20,6 @@ function FormikInput(props) {
         setValues(val)
     }, [])
 
-    console.log('error', error, touched)
     return (
         <FormControl
             isInvalid={chkValid}

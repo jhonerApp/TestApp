@@ -28,7 +28,6 @@ function FormikRadio(props) {
                     flexDirection: "row", justifyContent: 'space-around', alignItems: 'center', width: '100%', height: 50,
                     paddingRight: 10
                 }}
-                name="exampleGroup"
                 accessibilityLabel="select prize"
                 defaultValue={groupValue}
                 onChange={(value) => {

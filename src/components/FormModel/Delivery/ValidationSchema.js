@@ -20,16 +20,40 @@ const {
         parcelWeigth,
         deliveryDate,
         deliveryTime,
-        parcelInstruction,
         deliveryOption
     }
 
 } = CreatePackageModel
 export default [
+
+    Yup.object().shape({
+        [parcelDetails.name]: Yup.string().required(`${parcelDetails.requiredMsg}`),
+        [parcelHeight.name]: Yup.number()
+            .positive("Must be more than 0")
+            .integer("Must be more than 0")
+            .required(`${parcelHeight.requiredMsg}`),
+        [parcelWitdh.name]: Yup.number()
+            .positive("Must be more than 0")
+            .integer("Must be more than 0")
+            .required(`${parcelWitdh.requiredMsg}`),
+        [parcelLength.name]: Yup.number()
+            .positive("Must be more than 0")
+            .integer("Must be more than 0")
+            .required(`${parcelLength.requiredMsg}`),
+        [parcelWeigth.name]: Yup.number()
+            .positive("Must be more than 0")
+            .integer("Must be more than 0")
+            .required(`${parcelWeigth.requiredMsg}`),
+        [deliveryDate.name]: Yup.string()
+            .required('Date is required'),
+        [deliveryTime.name]: Yup.string()
+            .required('Date is required'),
+        [deliveryOption.name]: Yup.string().required(`${deliveryOption.requiredMsg}`),
+    }),
     Yup.object().shape({
         [pickFName.name]: Yup.string().required(`${pickFName.requiredMsg}`),
-        [pickLName.name]: Yup.string().required(`${pickFName.requiredMsg}`),
-        [pickCPnumber.name]: Yup.string().required(`${pickFName.requiredMsg}`),
+        [pickLName.name]: Yup.string().required(`${pickLName.requiredMsg}`),
+        [pickCPnumber.name]: Yup.string().required(`${pickCPnumber.requiredMsg}`),
         [pickAddress.name]: Yup.string()
             .nullable()
             .required(`${pickAddress.requiredMsg}`),
@@ -41,29 +65,5 @@ export default [
         [dropAddress.name]: Yup.string()
             .nullable()
             .required(`${dropAddress.requiredMsg}`),
-    }),
-    Yup.object().shape({
-        [parcelDetails.name]: Yup.string().required(`${parcelDetails.requiredMsg}`),
-        [parcelHeight.name]: Yup.number()
-            .positive("Must be more than 0")
-            .integer("Must be more than 0")
-            .required(`${parcelHeight.requiredMsg}`),
-        [parcelWitdh.name]: Yup.string()
-            .positive("Must be more than 0")
-            .integer("Must be more than 0")
-            .required(`${parcelWitdh.requiredMsg}`),
-        [parcelLength.name]: Yup.string()
-            .positive("Must be more than 0")
-            .integer("Must be more than 0")
-            .required(`${parcelLength.requiredMsg}`),
-        [parcelWeigth.name]: Yup.string()
-            .positive("Must be more than 0")
-            .integer("Must be more than 0")
-            .required(`${parcelWeigth.requiredMsg}`),
-        [deliveryDate.name]: Yup.date()
-            .required(`${deliveryDate.requiredMsg}`),
-        [deliveryTime.name]: Yup.date
-            .required(`${deliveryTime.requiredMsg}`),
-        [deliveryOption.name]: Yup.string().required(`${deliveryOption.requiredMsg}`),
     }),
 ]

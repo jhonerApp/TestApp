@@ -97,8 +97,8 @@ export default {
 
         },
         deliveryOption: {
-            name: 'parcelInstruction',
-            label: 'Instructions',
+            name: 'deliveryOption',
+            label: 'Delivery Options',
             requiredMsg: 'Delivery Option Required!'
         }
     }
