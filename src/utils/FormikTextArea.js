@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {
-    Input,
+    TextArea,
     FormControl,
     WarningOutlineIcon,
     Text
@@ -8,14 +8,11 @@ import {
 } from "native-base"
 
 
-
-
-function FormikInput(props) {
+function FormikTextArea(props) {
     const { error, touched, val, ...rest } = props;
     const chkValid = (error != undefined && touched) ? true : false;
 
     const [values, setValues] = useState()
-
     useEffect(() => {
         setValues(val)
     }, [])
@@ -24,7 +21,7 @@ function FormikInput(props) {
         <FormControl
             isInvalid={chkValid}
         >
-            <Input  variant="rounded" values={values} textAlign='right' style={{ fontFamily: 'Montserrat-Bold' }}   {...rest} />
+            <TextArea  h={20} values={values} textAlign='right' style={{ fontFamily: 'Montserrat-Bold' }}   {...rest} />
             <FormControl.ErrorMessage leftIcon={<WarningOutlineIcon size="xs" />} _text={{ fontFamily: 'Montserrat-Bold' }} >
                 {(error != undefined && touched) ? error : null}
             </FormControl.ErrorMessage>
@@ -33,4 +30,4 @@ function FormikInput(props) {
     )
 }
 
-export default FormikInput
+export default FormikTextArea

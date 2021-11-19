@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import {
+    AntDesign,
     Ionicons,
 } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
@@ -13,6 +14,7 @@ import {
     ScrollView,
     Divider,
     Image,
+    IconButton
 } from 'native-base';
 import BaseProvider from '../components/BaseProvider';
 
@@ -42,44 +44,69 @@ import HeaderProvider from '../components/HeaderProvider'
 function DeliveryScreen(props) {
     return (
         <BaseProvider>
-            <HeaderProvider>
-                <View style={{ paddingBottom: 30, justifyContent: 'flex-start', flexDirection: 'column' }}>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingBottom: 15 }}>
-                        <BackButton style={{ paddingLeft: 30 }} navigate={props} />
+            <View style={{
+                width: '100%',
+                height: '22%',
+                //position: 'absolute',
+                backgroundColor: "#212F3D",
+                //paddingTop: 50,
+                flexDirection: 'column',
+                paddingTop: 20
+            }}>
+                <View style={{ paddingBottom: 10, flexDirection: 'column' }}>
+                    <View>
+                        <BackButton style={{ paddingLeft: 30, paddingBottom: 10 }} navigate={props} />
+                    </View>
+                    <View style={{ paddingLeft: 30, flexDirection: 'row', justifyContent: 'space-between', paddingRight: 30 }}>
                         <Text style={{ fontFamily: 'Montserrat-Bold', color: 'white', paddingRight: 35 }}>FOR DELIVERY</Text>
+                        <View style={{ flexDirection: 'row' }}>
+                            <IconButton
+                                borderRadius='full'
+                                size={6}
+                                colorScheme="info"
+                                variant='solid'
+                                _icon={{
+                                    as: Ionicons,
+                                    name: "add",
+                                    size: 6,
+                                }}
+                            />
+                        </View>
                     </View>
 
-                    <View
-                        style={{
-                            flexDirection: 'row',
-                            justifyContent: 'center',
-                            paddingRight: 30,
-                            paddingLeft: 30,
-                        }}
-                    >
-                        <Input
-                            placeholder="Search for delivery"
-                            fontSize="14"
-                            width="100%"
-                            InputLeftElement={
-                                <Icon
-                                    as={<Ionicons name="search-circle" />}
-                                    size={10}
-                                    ml="2"
-                                    color="muted.400"
-                                />
-                            }
-                        />
-                    </View>
                 </View>
-            </HeaderProvider>
+                <View
+                    style={{
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        paddingRight: 30,
+                        paddingLeft: 30,
+                    }}
+                >
+                    <Input
+                        placeholder="Search for delivery"
+                        fontSize="14"
+                        width="100%"
+                        InputLeftElement={
+                            <Icon
+                                as={<Ionicons name="search-circle" />}
+                                size={10}
+                                ml="2"
+                                color="muted.400"
+                            />
+                        }
+                    />
+
+                </View>
+            </View>
 
             <View style={{
                 flex: 1,
                 position: 'relative',
                 height: '100%',
                 width: '100%',
-                top: 170,
+                top: 10
+                //top: 170,
 
 
             }}>
@@ -185,7 +212,7 @@ function DeliveryScreen(props) {
                 </ScrollView>
             </View>
 
-            
+
         </BaseProvider >
     );
 }

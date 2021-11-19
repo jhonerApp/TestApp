@@ -60,6 +60,7 @@ export default {
         parcelDetails: {
             name: 'parcelDetails',
             label: 'Item details(optional)',
+            requiredMsg: errMsg
         },
         parcelHeight: {
             name: 'parcelHeight',
@@ -84,11 +85,13 @@ export default {
         deliveryDate: {
             name: 'deliveryDate',
             label: 'Delivery Date',
+            requiredMsg: errMsg
 
         },
         deliveryTime: {
             name: 'deliveryTime',
             label: 'Delivery Date',
+            requiredMsg: errMsg
 
         },
         parcelInstruction: {

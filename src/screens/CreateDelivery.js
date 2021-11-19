@@ -86,7 +86,7 @@ function CreateDelivery(props) {
         initialValues: FormInitialValues,
         onSubmit: (values, actions) => {
             // alert(JSON.stringify(values, null, 2))
-            alert(JSON.stringify(values))
+            console.log(JSON.stringify(values))
 
             if (lastActivePage) {
                 submitForm(values, actions)

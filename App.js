@@ -42,7 +42,7 @@ export default function App() {
   return (
     //initialRouteName='HistoryDetailsScreen'
     <NavigationContainer>
-      <Stacks.Navigator screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }} initialRouteName='CreateDeliveryScreen'>
+      <Stacks.Navigator screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }} initialRouteName='DeliveryScreen'>
         <Stacks.Screen name="TabMenu" component={TabMenu} options={{ headerShown: false }} />
         <Stacks.Group screenOptions={{ presentation: 'modal' }}>
           <Stacks.Screen name="DeliveryScreen" component={DeliveryScreen} options={{
