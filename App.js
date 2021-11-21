@@ -45,8 +45,28 @@ export default function App() {
       <Stacks.Navigator screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }} initialRouteName='DeliveryScreen'>
         <Stacks.Screen name="TabMenu" component={TabMenu} options={{ headerShown: false }} />
         <Stacks.Group screenOptions={{ presentation: 'modal' }}>
-          <Stacks.Screen name="DeliveryScreen" component={DeliveryScreen} options={{
-            headerShown: false,
+          <Stacks.Screen name="DeliveryScreen" component={DeliveryScreen}  options={{
+            headerShown: true,
+            headerStyle: {
+              borderBottomLeftRadius: 30,
+              borderBottomRightRadius: 30,
+              height: 100
+            },
+
+            headerTitle: (
+              <View style={{
+                flex: 1,
+                height: "100%",
+                flexDirection: "row",
+                alignItems: "center"
+              }}>
+                <Text style={{ fontFamily: 'Montserrat-Bold', color: 'white' }}>Track your delivery</Text>
+                <Text style={{ fontFamily: 'Montserrat-Light', color: 'white' }}>Enter your track number</Text>
+                <Text style={{ fontFamily: 'Montserrat-Light', color: 'white' }}> to search your parcel</Text>
+              </View>
+            ),
+
+
           }}
           />
           <Stacks.Screen name="DeliveryStatusScreen" component={DeliveryStatusScreen} options={{
@@ -63,7 +83,7 @@ export default function App() {
           />
         </Stacks.Group>
       </Stacks.Navigator>
-    </NavigationContainer>
+    </NavigationContainer >
 
   );
 }

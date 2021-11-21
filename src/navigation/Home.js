@@ -32,16 +32,13 @@ function ButtonM(props) {
 
 function Home(props) {
     return (
-
         <Stack.Navigator>
             <Stack.Screen name="HomeScreen" component={HomeScreen} options={{
                 headerRight: () => <ButtonM {...props} />,
                 headerTitle: '',
                 headerTransparent: true,
-
-            }}
-            />
-        </Stack.Navigator >
+            }}/>
+        </Stack.Navigator>
     )
 }
 

@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
 import {
-    AntDesign,
+    MaterialIcons,
     Ionicons,
+    FontAwesome
 } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, Dimensions, Image } from 'react-native';
 import {
     Stack,
     Icon,
@@ -13,16 +14,18 @@ import {
     View,
     ScrollView,
     Divider,
-    Image,
     IconButton
 } from 'native-base';
 import BaseProvider from '../components/BaseProvider';
 
 import pickupIcon from '../../assets/iconTracker/icons8-map-point-64.png'
 import dropIcon from '../../assets/iconTracker/icons8-pickup-point-128.png'
+import deliveryIcon from '../../assets/iconTracker/imageedit_9_3739506774.png'
+
 
 import BackButton from '../components/BackButton'
 import HeaderProvider from '../components/HeaderProvider'
+import { height, width } from 'styled-system';
 
 // function ButtonM(props) {
 //     return (
@@ -42,38 +45,47 @@ import HeaderProvider from '../components/HeaderProvider'
 // }
 
 function DeliveryScreen(props) {
+
+    const deviceWidth = Dimensions.get('window').width;
+    const deviceHeight = Dimensions.get('window').height;
+
+    const dimensions = Dimensions.get('window');
+    const imageHeight = Math.round(dimensions.width * 9 / 16);
+    const imageWidth = dimensions.width;
+
     return (
         <BaseProvider>
             <View style={{
                 width: '100%',
-                height: '22%',
+                height: '43%',
                 //position: 'absolute',
                 backgroundColor: "#212F3D",
                 //paddingTop: 50,
                 flexDirection: 'column',
-                paddingTop: 20
+                paddingTop: 30,
             }}>
-                <View style={{ paddingBottom: 10, flexDirection: 'column' }}>
-                    <View>
-                        <BackButton style={{ paddingLeft: 30, paddingBottom: 10 }} navigate={props} />
-                    </View>
-                    <View style={{ paddingLeft: 30, flexDirection: 'row', justifyContent: 'space-between', paddingRight: 30 }}>
-                        <Text style={{ fontFamily: 'Montserrat-Bold', color: 'white', paddingRight: 35 }}>FOR DELIVERY</Text>
-                        <View style={{ flexDirection: 'row' }}>
-                            <IconButton
-                                borderRadius='full'
-                                size={6}
-                                colorScheme="info"
-                                variant='solid'
-                                _icon={{
-                                    as: Ionicons,
-                                    name: "add",
-                                    size: 6,
-                                }}
+                <View style={{ paddingBottom: 5, flexDirection: 'column' }}>
+                    <View style={{ paddingLeft: 5, flexDirection: 'row', justifyContent: 'space-between', paddingRight: 20, paddingTop: 20 }}>
+                        <BackButton style={{ paddingLeft: 30 }} navigate={props} />
+                        <TouchableOpacity onPress={() => props.navigation.navigate('DeliveryScreen', props.navigate)}
+                            style={{ backgroundColor: '#2E86C1', borderRadius: 40, width: 40, height: 40, paddingHorizontal: 10, paddingTop: 10 }}>
+                            <MaterialIcons
+                                name="my-library-add"
+                                size={20}
+                                color="#FDFEFE"
+                                style={{ width: 50 }}
                             />
-                        </View>
+                        </TouchableOpacity>
                     </View>
 
+                    <View style={{ alignItems: 'center', }}>
+                  
+                        <View style={{ margin: 20, alignItems: 'center' }}>
+                            <Text style={{ fontFamily: 'Montserrat-Bold', color: 'white' }}>Track your delivery</Text>
+                            <Text style={{ fontFamily: 'Montserrat-Light', color: 'white' }}>Enter your track number</Text>
+                            <Text style={{ fontFamily: 'Montserrat-Light', color: 'white' }}> to search your parcel</Text>
+                        </View>
+                    </View>
                 </View>
                 <View
                     style={{
@@ -81,6 +93,7 @@ function DeliveryScreen(props) {
                         justifyContent: 'center',
                         paddingRight: 30,
                         paddingLeft: 30,
+                        paddingBottom: 15
                     }}
                 >
                     <Input
@@ -89,8 +102,8 @@ function DeliveryScreen(props) {
                         width="100%"
                         InputLeftElement={
                             <Icon
-                                as={<Ionicons name="search-circle" />}
-                                size={10}
+                                as={<FontAwesome name="search" />}
+                                size={5}
                                 ml="2"
                                 color="muted.400"
                             />

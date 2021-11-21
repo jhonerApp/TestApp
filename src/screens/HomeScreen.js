@@ -344,7 +344,7 @@ function HomeScreen(props) {
 
 
       </View>
-    </BaseProvider >
+    </BaseProvider>
   )
 }
 

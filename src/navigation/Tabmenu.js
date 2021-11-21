@@ -33,12 +33,12 @@ const TabButton = (props) => {
 
 const TabArr = [
     { id: 1, route: 'Home', label: 'HOME', type: Ionicons, activeIcon: 'grid', inActiveIcon: 'grid-outline', component: Home },
-    { id: 4, route: 'Profile', label: 'PROFILE', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: Profile },
-    { id: 3, route: 'History', label: 'HISTORY', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: History },
-   
-
+    { id: 4, route: 'Accounts', label: 'PROFILE', type: FontAwesome, activeIcon: 'user-circle-o', inActiveIcon: 'user-circle', component: Profile },
+    { id: 3, route: 'Delivery History', label: 'HISTORY', type: Ionicons, activeIcon: 'newspaper', inActiveIcon: 'newspaper-outline', component: History },
 
 ];
+
+
 
 
 function TabMenu() {
